@@ -6,6 +6,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "lists_table")
 data class TasksList(
     @PrimaryKey(autoGenerate = true)
-    val id:Int,
-    val name:String,
-    val color:String)
+    val id: Int,
+    val name: String,
+    val color: Int,
+    val count: Int
+)

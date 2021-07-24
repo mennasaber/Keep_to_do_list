@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KeepToDoList</string>
+    <string name="color">Color</string>
+    <string name="cancel">Cancel</string>
+    <string name="create_list">Create list</string>
+    <string name="completed">Completed</string>
 </resources>

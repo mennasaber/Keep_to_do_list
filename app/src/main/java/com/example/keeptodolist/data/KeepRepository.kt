@@ -8,6 +8,7 @@ class KeepRepository(private val keepDao: KeepDao) {
     }
 
     suspend fun addTask(task: Task) {
+        keepDao.updateListCount(task.listId)
         keepDao.addTask(task)
     }
 
@@ -15,7 +16,17 @@ class KeepRepository(private val keepDao: KeepDao) {
         return keepDao.getAllLists()
     }
 
-    fun getAllTasks(listId: Int): LiveData<List<Task>> {
-        return keepDao.getAllTasks(listId)
+    fun getUncompletedTasks(listId: Int): LiveData<List<Task>> {
+        return keepDao.getUncompletedTasks(listId)
+    }
+    suspend fun updateTask(task: Task){
+        keepDao.updateTask(task)
+    }
+    suspend fun updateList(list: TasksList){
+        keepDao.updateList(list)
+    }
+
+    fun getCompletedTasks(listId: Int): LiveData<List<Task>> {
+       return keepDao.getCompletedTasks(listId)
     }
 }

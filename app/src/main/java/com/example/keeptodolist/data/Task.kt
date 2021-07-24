@@ -8,5 +8,5 @@ data class Task(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val name: String,
-    val state: Boolean,
+    var state: Boolean,
     val listId: Int)

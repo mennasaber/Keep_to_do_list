@@ -7,14 +7,24 @@ import androidx.room.*
 interface KeepDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addTask(task: Task)
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addList(tasksList: TasksList)
-    @Query("SELECT * FROM task_table WHERE listId = :listId")
-    fun getAllTasks(listId:Int):LiveData<List<Task>>
+
+    @Query("SELECT * FROM task_table WHERE listId = :listId and state=0")
+    fun getUncompletedTasks(listId: Int): LiveData<List<Task>>
+
     @Query("SELECT * FROM lists_table ORDER By id DESC")
-    fun getAllLists():LiveData<List<TasksList>>
+    fun getAllLists(): LiveData<List<TasksList>>
+
     @Update
-    fun updateTask(task: Task)
+    suspend fun updateTask(task: Task)
+
     @Update
-    fun updateList(list: TasksList)
+    suspend fun updateList(list: TasksList)
+
+    @Query("Update lists_table set count = count+1 where id=:listId")
+    suspend fun updateListCount(listId: Int)
+    @Query("SELECT * FROM task_table WHERE listId = :listId and state=1")
+    fun getCompletedTasks(listId: Int): LiveData<List<Task>>
 }
