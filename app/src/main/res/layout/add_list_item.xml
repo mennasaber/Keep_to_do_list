@@ -96,13 +96,13 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:src="@color/blue_700" />
+            android:src="@color/orange" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:src="@color/light_lavander" />
+            android:src="@color/light_black" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="35dp"
@@ -114,18 +114,18 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:src="@color/black" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@color/orange" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
             android:src="@color/light_green" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:src="@color/light_blue" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:src="@color/light_lavander" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,4 +4,6 @@
     <string name="cancel">Cancel</string>
     <string name="create_list">Create list</string>
     <string name="completed">Completed</string>
+    <string name="add_a_task">Add a task</string>
+    <string name="add_the_task_button">Add the task button</string>
 </resources>
