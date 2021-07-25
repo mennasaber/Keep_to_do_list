@@ -1,7 +1,9 @@
 package com.example.keeptodolist.views
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -28,7 +30,6 @@ class TasksActivity : AppCompatActivity(), View.OnClickListener {
 
         listId = intent.getIntExtra("listId", 0)
         val listName = intent.getStringExtra("listName")
-        val listColor = intent.getIntExtra("listColor", 0)
         val listTextView = findViewById<TextView>(R.id.listTitle_textView)
         val listColorIcon = findViewById<CircleImageView>(R.id.listIcon_imageView)
         val recyclerView = findViewById<RecyclerView>(R.id.tasks_recyclerView)
@@ -44,7 +45,6 @@ class TasksActivity : AppCompatActivity(), View.OnClickListener {
         addButton.setOnClickListener(this)
 
         listTextView.text = listName
-        listColorIcon.borderColor = ContextCompat.getColor(this, listColor)
 
         keepViewModel = ViewModelProvider(this)[KeepViewModel::class.java]
 
@@ -91,4 +91,6 @@ class TasksActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+
 }

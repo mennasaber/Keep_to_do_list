@@ -27,7 +27,7 @@ class ListsAdapter(private val lists: List<TasksList>,private val handleList: Ha
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.listTitleTextView.text = lists[position].name
-        holder.listIconImage.borderColor = ContextCompat.getColor(holder.itemView.context,lists[position].color)
+        holder.listIconImage.borderColor = lists[position].color
         holder.tasksCount.text = lists[position].count.toString()
         holder.itemView.setOnClickListener {
             handleList.onClickItemListener(lists[position])

@@ -24,8 +24,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="Enter list title"
         android:inputType="textPersonName"
-        android:text="Enter list title"
+        android:textColor="@color/light_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/listIcon_imageView"
@@ -50,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/listTitle_editText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/cancel_button"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,14 +60,14 @@
         android:text="@string/cancel"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/createListButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/createListButton"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,46 +87,69 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="8dp"
         android:weightSum="8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/c1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:src="@color/orange" />
+            android:src="@color/orange"
+            app:civ_border_color="@color/orange"
+            app:civ_border_width="4dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/c2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:src="@color/light_black" />
+            android:src="@color/light_black"
+            app:civ_border_color="@color/light_black"
+            app:civ_border_width="4dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/c3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:src="@color/dark_yellow" />
+            android:src="@color/dark_yellow"
+            app:civ_border_color="@color/dark_yellow"
+            app:civ_border_width="4dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/c4"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:src="@color/light_green" />
+            android:src="@color/light_green"
+            app:civ_border_color="@color/light_green"
+            app:civ_border_width="4dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/c5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:src="@color/light_blue" />
+            android:src="@color/light_blue"
+            app:civ_border_color="@color/light_blue"
+            app:civ_border_width="4dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/c6"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:src="@color/light_lavander" />
+            android:src="@color/light_lavander"
+            app:civ_border_color="@color/light_lavander"
+            app:civ_border_width="4dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
