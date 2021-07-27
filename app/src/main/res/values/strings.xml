@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KeepToDoList</string>
+    <string name="app_name">Keep</string>
     <string name="color">Color</string>
     <string name="cancel">Cancel</string>
     <string name="create_list">Create list</string>
@@ -12,5 +12,6 @@
     <string name="delete">Delete</string>
     <string name="confirm_message">\"%1$s!\" will be permanently deleted.</string>
     <string name="are_you_sure">Are you sure?</string>
-    <string name="task_title" >task title</string>
+    <string name="task_title">task title</string>
+    <string name="keep_up_the_good_work">Keep up the good work</string>
 </resources>

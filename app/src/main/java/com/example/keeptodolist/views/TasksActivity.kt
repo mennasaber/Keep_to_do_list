@@ -57,7 +57,13 @@ class TasksActivity : AppCompatActivity(), View.OnClickListener {
 
         completedRecyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
+        val emptyImageView = findViewById<ImageView>(R.id.empty_imageView)
+        keepViewModel.getTasksCount(listId).observe(this, { count ->
+            if (count == 0)
+                emptyImageView.visibility = View.VISIBLE
+            else
+                emptyImageView.visibility = View.GONE
+        })
         keepViewModel.getUncompletedTasks(listId).observe(this, { tasks ->
             tasksAdapter = TasksAdapter(tasks, object : HandleTaskOnClick {
                 override fun onClickItemListener(task: Task) {

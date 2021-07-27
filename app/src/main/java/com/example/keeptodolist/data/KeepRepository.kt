@@ -41,4 +41,7 @@ class KeepRepository(private val keepDao: KeepDao) {
         keepDao.decreaseListCount(listId)
         keepDao.deleteTask(id)
     }
+    fun getTasksCount(listId: Int):LiveData<Int>{
+        return keepDao.getTasksCount(listId)
+    }
 }

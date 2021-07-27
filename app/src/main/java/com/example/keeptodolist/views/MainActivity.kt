@@ -3,9 +3,11 @@ package com.example.keeptodolist.views
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,11 +30,16 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.lists_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val addListButton = findViewById<FloatingActionButton>(R.id.addListButton)
+        val emptyImageView = findViewById<ImageView>(R.id.empty_imageView)
         addListButton.setOnClickListener {
             showDialog()
         }
         var listsAdapter: ListsAdapter
         keepViewModel.getLists().observe(this, { lists ->
+            if (lists.isEmpty())
+                emptyImageView.visibility = View.VISIBLE
+            else
+                emptyImageView.visibility = View.GONE
             listsAdapter = ListsAdapter(lists, object : HandleListOnClick {
                 override fun onClickItemListener(list: TasksList) {
                     val intent = Intent(this@MainActivity, TasksActivity::class.java).apply {

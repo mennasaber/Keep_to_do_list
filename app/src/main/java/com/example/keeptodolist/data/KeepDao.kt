@@ -20,6 +20,9 @@ interface KeepDao {
     @Query("SELECT * FROM task_table WHERE listId = :listId and state=1")
     fun getCompletedTasks(listId: Int): LiveData<List<Task>>
 
+    @Query("SELECT count(*) FROM task_table WHERE listId = :listId")
+    fun getTasksCount(listId: Int): LiveData<Int>
+
     @Update
     suspend fun updateTask(task: Task)
 

@@ -66,4 +66,7 @@ class KeepViewModel(application: Application) : AndroidViewModel(application) {
             repository.deleteTask(id, listId)
         }
     }
+    fun getTasksCount(listId: Int):LiveData<Int>{
+        return repository.getTasksCount(listId)
+    }
 }
