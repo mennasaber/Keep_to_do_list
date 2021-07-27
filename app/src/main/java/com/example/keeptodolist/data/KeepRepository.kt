@@ -19,14 +19,26 @@ class KeepRepository(private val keepDao: KeepDao) {
     fun getUncompletedTasks(listId: Int): LiveData<List<Task>> {
         return keepDao.getUncompletedTasks(listId)
     }
-    suspend fun updateTask(task: Task){
+
+    suspend fun updateTask(task: Task) {
         keepDao.updateTask(task)
     }
-    suspend fun updateList(list: TasksList){
-        keepDao.updateList(list)
+
+    suspend fun updateList(id: Int, name: String, color: Int) {
+        keepDao.updateList(id, name, color)
     }
 
     fun getCompletedTasks(listId: Int): LiveData<List<Task>> {
-       return keepDao.getCompletedTasks(listId)
+        return keepDao.getCompletedTasks(listId)
+    }
+
+    suspend fun deleteList(listId: Int) {
+        keepDao.deleteTasksOfList(listId)
+        keepDao.deleteList(listId)
+    }
+
+    suspend fun deleteTask(id: Int, listId: Int) {
+        keepDao.decreaseListCount(listId)
+        keepDao.deleteTask(id)
     }
 }

@@ -47,11 +47,23 @@ class KeepViewModel(application: Application) : AndroidViewModel(application) {
 
     fun updateList(list: TasksList) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.updateList(list)
+            repository.updateList(list.id, list.name, list.color)
         }
     }
 
     fun getCompletedTasks(listId: Int): LiveData<List<Task>> {
         return repository.getCompletedTasks(listId)
+    }
+
+    fun deleteList(listId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteList(listId)
+        }
+    }
+
+    fun deleteTask(id: Int, listId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteTask(id, listId)
+        }
     }
 }

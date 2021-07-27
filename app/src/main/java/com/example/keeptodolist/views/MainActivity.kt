@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, TasksActivity::class.java).apply {
                         putExtra("listId", list.id)
                         putExtra("listName", list.name)
+                        putExtra("listColor", list.color)
                     }
                     startActivity(intent)
                 }

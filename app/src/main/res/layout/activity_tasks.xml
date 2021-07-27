@@ -27,10 +27,11 @@
 
             <TextView
                 android:id="@+id/listTitle_textView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:textColor="@color/light_black"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -50,7 +51,18 @@
                 android:background="@drawable/back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
+            <ImageView
+                android:id="@+id/delete_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/delete"
+                android:contentDescription="@string/delete_the_list" />
             <TextView
                 android:id="@+id/completeTextView"
                 android:layout_width="wrap_content"

@@ -4,5 +4,6 @@ import com.example.keeptodolist.data.Task
 import com.example.keeptodolist.data.TasksList
 
 interface HandleTaskOnClick {
-     fun onClickItemListener(task: Task)
+    fun onClickItemListener(task: Task)
+    fun onClickListener(task: Task)
 }
